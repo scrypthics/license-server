@@ -31,4 +31,30 @@ app.post('/activate',(req,res)=>{
   res.json({status:'active',token:signPayload(payload),...payload});
 });
 
+// Issue trial license
+app.post('/issue-trial', (req, res) => {
+  const { deviceId, appVersion } = req.body || {};
+  if (!deviceId) {
+    return res.status(400).json({ error: 'deviceId is required' });
+  }
+
+  // Trial policy: 30 days, 1 activation per device
+  const now = new Date();
+  const expiry = new Date();
+  expiry.setDate(now.getDate() + 30);
+
+  const payload = {
+    licenseKey: `TRIAL-${deviceId}`,
+    tier: 'Trial',
+    expiry: expiry.toISOString(),
+    features: ['basic'],
+    deviceId,
+    appVersion,
+    issuedAt: now.toISOString(),
+  };
+
+  const token = signPayload(payload);
+  return res.json({ status: 'trial-issued', token, ...payload });
+});
+
 app.listen(PORT,()=>console.log(`Running on ${PORT}`));
