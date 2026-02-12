@@ -1,42 +1,20 @@
 {
-  "FREE-0000-0000": {
-    "tier": "Free",
-    "expiry": null,
-    "status": "active",
-    "activations": []
-  },
-  "PRO-1234-ABCD": {
-    "tier": "Pro",
-    "expiry": "2027-12-31",
-    "status": "active",
-    "activations": []
-  },
-  "ENT-9999-ZZZZ": {
-    "tier": "Enterprise",
-    "expiry": "2028-12-31",
-    "status": "active",
-    "activations": []
-  },
   "TRIAL-TESTDEVICE123": {
     "licenseKey": "TRIAL-TESTDEVICE123",
     "tier": "Trial",
     "expiry": "2026-03-13T23:40:25.846Z",
-    "features": [
-      "basic"
-    ],
+    "features": ["basic"],
     "deviceId": "TESTDEVICE123",
     "appVersion": "1.0.0",
     "issuedAt": "2026-02-11T23:40:25.846Z",
-    "activations": [
-      "TESTDEVICE123"
-    ]
+    "activations": ["TESTDEVICE123"]
   },
   "PRO-F402F5F02BCF": {
     "licenseKey": "PRO-F402F5F02BCF",
     "tier": "Pro",
     "email": "buyer@example.com",
     "expiry": "2027-02-11T23:40:25.856Z",
-    "features": [],
+    "features": ["pro"],
     "issuedAt": "2026-02-11T23:40:25.856Z",
     "activations": [],
     "maxActivations": 3
@@ -46,9 +24,7 @@
     "tier": "Pro",
     "email": "registered@example.com",
     "expiry": null,
-    "features": [
-      "pro"
-    ],
+    "features": ["pro"],
     "issuedAt": "2026-02-12T00:00:00Z",
     "activations": [],
     "maxActivations": 3
